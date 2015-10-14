@@ -97,7 +97,7 @@
                                (.getPath))]
           (let [{:keys [exit] :as result} ((r doo.core/run-script)
                                            js-env
-                                           path)]
+                                           {:output-to path})]
             (when exit? (System/exit exit))
             (next-task fileset))
           (do (warn (str "Test script not found: " out-file))
